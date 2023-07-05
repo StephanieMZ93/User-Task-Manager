@@ -15,7 +15,7 @@ import java.time.LocalDateTime;
 
 public class Task {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+
     private Long id;
     @Column(nullable = true)
     private String name;
@@ -25,9 +25,8 @@ public class Task {
     private LocalDateTime startDate;
     @Column(nullable = true)
     private LocalDateTime endDate;
-    @Column(nullable = true)
-    private Boolean state;
+    @Enumerated(EnumType.STRING)
+    private State state;
     @ManyToOne
-//    @JoinColumn(name = "id_user", insertable = false, updatable = false)
     private User user;
 }

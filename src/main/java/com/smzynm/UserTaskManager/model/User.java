@@ -13,14 +13,11 @@ import java.util.List;
 
 public class User {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private String identification;
     @Column(nullable = false)
     private String name;
     @Column(nullable = false)
     private String lastname;
-    @Column(nullable = false, unique = true)
-    private String identification;
     @Column(nullable = false)
     private String city;
     @Column(nullable = false)

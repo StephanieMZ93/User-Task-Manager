@@ -15,7 +15,6 @@ import java.time.LocalDateTime;
 
 public class Task {
     @Id
-
     private Long id;
     @Column(nullable = true)
     private String name;
@@ -27,6 +26,9 @@ public class Task {
     private LocalDateTime endDate;
     @Enumerated(EnumType.STRING)
     private State state;
+    @Column(nullable = true, name = "identification_user")
+    private String identicationUser;
     @ManyToOne
+    @JoinColumn(name = "identification_user", insertable = false, updatable = false)
     private User user;
 }
